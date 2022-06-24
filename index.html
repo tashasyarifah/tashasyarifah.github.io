@@ -5,13 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Noto+Sans+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
     <script src="navigation.js" defer></script>
     <title>Tasha's portfolio</title>
 </head>
-<body>
-    <header>
+<body class="Home">
+    <a class="skip-to-main-content" href="#main">Skip to main content</a>
+    <header class="global-wrapper">
         <div class="logo">
-            <a href="/">logo</a>
+            <a href="/">Tasha</a>
         </div>
 
         <button class="mobile-nav-button" aria-controls="primary-navigation" aria-expanded="false">
@@ -22,22 +28,59 @@
             <ul role="list" id="primary-navigation" class="primary-navigation" data-visible="false">
                 <li class="active"><a href="/" class="list-item">Home</a></li>
                 <li><a href="/project.html" class="list-item">Project</a></li>
-                <li><a href="/" class="list-item">Blog</a></li>
+                <li><a href="https://tashablog.gatsbyjs.io/" target="_blank" rel="noopener noreferrer" class="list-item">Blog</a></li>
             </ul>
         </nav>
     </header>
 
 
-    <main>
-        <section class="container">
-            <h1>Hi, welcome to my .... </h1>
+    <main id="main">
+        <section class="global-wrapper global-padding hero">
+            <div class="hero-text">
+                <h1>Hi, I'm Tasha a front-end developer.</h1>
+                <p>Go explore my portfolio.</p>
+            </div>
+            
+            <img src="./assets/profile-picture.jpg" alt="Photo of Tasha" class="avatar">
         </section>
 
-        <section class="container">
-            <div class="project">
-                <h2>Projects goes here</h2>
+        <section class="global-wrapper global-padding sub-hero">
+            <h2>Projects that I made</h2>
+            <div class="sub-hero-project">
+                <ul>
+                    <li>SignUp Form</li>
+                    <li>Traveling Journal</li>
+                    <li>Digital Business Card</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="global-wrapper global-padding technology">
+            <h2>Technology that I used</h2>
+            <div class="sub-hero-project">
+                <h4>Languages</h4>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <h4>Frameworks</h4>
+                <ul>
+                    <li>Reactjs</li>
+                    <li>Sass</li>
+                    <li>Gatsbyjs</li>
+                </ul>
+                <h4>Tools</h4>
+                <ul>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
+
+                <p>npm, node.js</p>
             </div>
         </section>
     </main>
+
+    <footer class="global-wrapper global-padding">©️ 2022 Made by Tasha Syarifah</footer>
 </body>
 </html>

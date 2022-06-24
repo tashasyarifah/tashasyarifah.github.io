@@ -1,12 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap')
+/* I am gonna comments the styles, so I know which one does what. It is also notes for me in the future. */
+
+/* Root is where all variables placed. It is easier to handle and reusable. */
+
+:root {
+    --fontFamily-body: "Noto Sans Mono", monospace;
+    --fontFamily-heading: "Atkinson Hyperlegible", system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        "Noto Sans",
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol",
+        "Noto Color Emoji";
+    --fontWeight-light: 300;
+    --fontWeight-medium: 400;
+    --fontWeight-bold: 700;
+    --fontSize-root: 16px;
+    --fontSize-0: 0.833rem;
+    --fontSize-1: 1rem;
+    --fontSize-2: 1.2rem;
+    --fontSize-3: 1.44rem;
+    --fontSize-4: 1.728rem;
+    --fontSize-5: 2.074rem;
+    --fontSize-6: 2.488rem;
+    /* --color-bg: #FFF3DC;
+    --color-text: #004E61; */
+    --color-bg: #E6FFDC;
+    --color-text: #603E7A;
 
 
-/* This rules are inspired by https://piccalil.li/blog/a-modern-css-reset/ */
-*, *::before, *::after {
+}
+
+/* 
+
+ - The basic rules are inspired by https://piccalil.li/blog/a-modern-css-reset/ 
+
+ - Gonna classify them, so It'll be easier to find.
+
+*/
+
+/* Fundamental styles. It is necessary to make in case I changed them for a specific content, then the others(the same semantic in other context) do not affected. */
+
+*,*::before,*::after {
     box-sizing: border-box;
 }
 
-body, h1, h2, h3, p {
+html {
+    font-size: var(--fontSize-root);
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
@@ -22,8 +70,11 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    font-size: 1rem;
-    overflow: hidden;
+    font-size: var(--fontSize-1);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--fontFamily-body);
+    font-weight: var(--fontWeight-light);
 }
 
 img {
@@ -31,8 +82,15 @@ img {
     display: block;
 }
 
-input, textarea, select {
+input, textarea, select, button {
     font: inherit;
+}
+
+a {
+    color: var(--color-text);
+    font-weight: var(--fontWeight-bold);
+    font-family: var(--fontFamily-heading);
+    text-decoration: none;
 }
 
 @media (prefer-reduced-motion: reduce) {
@@ -48,16 +106,97 @@ input, textarea, select {
     }
 }
 
+/* Heading */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fontFamily-heading);
+    font-weight: var(--fontWeight-bold);
+}
+
+h1 {
+    font-size: var(--fontSize-6);
+}
+
+h2 {
+    font-size: var(--fontSize-5);
+}
+
+h3 {
+    font-size: var(--fontSize-4);
+}
+
+h4 {
+    font-size: var(--fontSize-3);
+}
+
+h5 {
+    font-size: var(--fontSize-2);
+}
+
+h6 {
+    font-size: var(--fontSize-1);
+}
+
+
+
+/* Custom classes */
+
+.global-wrapper {
+    margin-inline: auto;
+    max-width: 60rem;
+}
+
+.global-padding {
+    padding: 2.5rem 2rem;
+}
+
+/* For Accessibility */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skip-to-main-content {
+    position: absolute;
+    z-index: 9999;
+    background-color: slateblue;
+    color: beige;
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-main-content:focus {
+    transform: translateY(0%);
+}
+
 /*  Header */
+
 header {
-    padding: 4rem 5rem;
+    padding: 2rem;
     display: flex;
     justify-content: space-between;
     align-content: space-between;
     align-items: center;
-    background-color: gold;
+    border: 2px solid white;
 }
 
+.logo {
+    padding: 1.25rem;
+}
+
+.logo a {
+    font-size: var(--fontSize-4);
+}
 
 /* Navigation */
 
@@ -68,7 +207,7 @@ header {
     gap: 1em;
     margin: 0;
     background-color: hsl(0 0% 0% / 0.1);
-    color: whitesmoke;
+    /* color: whitesmoke; */
 }
 
 @supports (backdrop-filter: blur(1rem)) {
@@ -109,11 +248,10 @@ header {
         background-repeat: no-repeat;
         background-color: transparent;
         z-index: 9999;
-        width: 2.5rem;
+        width: 2rem;
         aspect-ratio: 1;
-        top: 2rem;
         right: 2rem;
-        border: none;
+        border-radius: 25%;
     }
 
     .mobile-nav-button[aria-expanded="true"] {
@@ -122,11 +260,11 @@ header {
     }
 }
 
-@media (min-width: 35em) and (max-width: 55em) {
+/* @media (min-width: 35em) and (max-width: 55em) {
     .primary-navigation {
         background-color: lawngreen;
     }
-}
+} */
 
 @media (min-width: 35em) {
     .primary-navigation {
@@ -136,9 +274,43 @@ header {
     }
 }
 
-/* 
 
-.list-item {
-    padding-left: 0.5rem;
-} */
+/* hero */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text p {
+    font-weight: var(--fontWeight-medium);
+    font-size: var(--fontSize-3);
+}
+
+.avatar {
+    border-radius: 25%;
+}
+
+
+@media (min-width: 36em) {
+    .hero {
+        flex-direction: row;
+    }
+}
+
+/* Sub-hero */
+
+
+
+/* Footer */
+
+footer {
+    padding: 2rem;
+    text-align: center;
+}
+
 
