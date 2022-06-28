@@ -292,7 +292,7 @@ header {
 }
 
 .avatar {
-    border-radius: 25%;
+    border-radius: 30%;
 }
 
 
@@ -303,8 +303,10 @@ header {
 }
 
 /* Sub-hero */
-
-
+ 
+.sub-hero-list {
+    border: 2px solid white;
+}
 
 /* Footer */
 

@@ -5,22 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
-    <title>Tasha's project</title>
+    <script src="navigation.js" defer></script>
+    <title>Tasha's Project</title>
 </head>
 <body>
-    <header>
-        <a href="/">Tasha</a>
-
+    <a class="skip-to-main-content" href="#main">Skip to main content</a>
+    <header class="global-wrapper">
+        <div class="logo">
+            <a href="/">Tasha</a>
+        </div>
+    
+        <button class="mobile-nav-button" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+        </button>
+    
         <nav>
-            <ul role="list">
-                <li><a href="/" class="list-item">Home</a></li>
+            <ul role="list" id="primary-navigation" class="primary-navigation" data-visible="false">
+                <li class="active"><a href="/" class="list-item">Home</a></li>
+                <li><a href="/about.html" class="list-item">About Me</a></li>
                 <li><a href="/project.html" class="list-item">Project</a></li>
-                <li><a href="/" class="list-item">Blog</a></li>
+                <li><a href="https://tashablog.gatsbyjs.io/" target="_blank" rel="noopener noreferrer"
+                        class="list-item">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main id="main">
         <h1>Test</h1>
     </main>
 </body>
