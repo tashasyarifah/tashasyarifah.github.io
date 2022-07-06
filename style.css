@@ -28,8 +28,6 @@
     --fontSize-4: 1.728rem;
     --fontSize-5: 2.074rem;
     --fontSize-6: 2.488rem;
-    /* --color-bg: #FFF3DC;
-    --color-text: #004E61; */
     --color-bg: #E6FFDC;
     --color-text: #603E7A;
 
@@ -119,6 +117,7 @@ h1 {
 
 h2 {
     font-size: var(--fontSize-5);
+    padding-bottom: 1.25rem;
 }
 
 h3 {
@@ -127,6 +126,7 @@ h3 {
 
 h4 {
     font-size: var(--fontSize-3);
+    padding-block: 0.75rem; 
 }
 
 h5 {
@@ -191,7 +191,7 @@ header {
 }
 
 .logo {
-    padding: 1.25rem;
+    padding: 0.75rem;
 }
 
 .logo a {
@@ -305,8 +305,14 @@ header {
 /* Sub-hero */
  
 .sub-hero-list {
-    border: 2px solid white;
+    border: 2px solid red;
+    padding-top: 1.25rem;
 }
+
+.sub-hero-list > p {
+    padding-bottom: 1rem;
+}
+
 
 /* Footer */
 
